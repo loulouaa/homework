@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document Viewer</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: radial-gradient(circle, #a3b3e3 0%, #b3bad1e2 100%);
+        margin: 0;
+        padding: 0;
+        color: #060606;
+      }
+
+      .form-control {
+        width: 100%;
+        padding: 10px;
+        font-size: 20px;
+        border: 1px solid #021a21; /* لون كحلي قاتم */
+        border-radius: 5px;
+        resize: none;
+        margin-top: 10px;
+        background-color: #a4bcd58d; /* خلفية كحلي فاتح */
+        color: #000000;
+      }
+
+      /* CSS لتحديد التمييز */
+      .highlighted {
+        background-color: yellow;  /* اللون الأصفر */
+        font-weight: bold;  /* جعل النص بالخط العريض */
+        color: black;  /* لون النص */
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container" id="container" name="container">
+      <div class="row">
+        <h2>Information Retrieval HW</h2>
+      </div>
+      <div class="row">
+        <div class="mb-3">
+          <label for="exampleFormControlInput1" class="form-label">Show Document</label>
+        </div>
+        <div class="mb-3">
+          <label for="exampleFormControlTextarea1" class="form-label">{{ pk }}</label>
+          <textarea class="form-control" name="resulte" id="exampleFormControlTextarea1" cols="30" rows="15">{{ CONT | safe }}</textarea>
+        </div>
+      </div>
+    </div>
+
+    <script src="{% static 'js/script.js' %}"></script>
+  </body>
+</html>

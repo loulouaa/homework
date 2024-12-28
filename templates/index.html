@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HOME WORK</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: radial-gradient(circle, #b2bde4db 0%, #a7c2e6 100%);
+        margin: 0;
+        padding: 0;
+        color: #080808;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        border: 2px solid #c9daeb;
+        border-radius: 12px;
+        background-color: #a8b1e6;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      h2 {
+        text-align: center;
+        color: #444647dc;
+        margin-bottom: 20px;
+      }
+
+      .form-control {
+        width: calc(100% - 22px);
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #62636bc1;
+        background-color: #acbbe5a9;
+        border-radius: 5px;
+        margin-bottom: 10px;
+        transition: border-color 0.3s ease;
+      }
+
+      .form-control:focus {
+        outline: none;
+        border-color: #787b86;
+      }
+
+      .input-group {
+        margin-bottom: 20px;
+      }
+
+      .input-group-text {
+       
+        color: #151414;
+        border: none;
+        border-radius: 5px 0 0 5px;
+        padding: 10px 15px;
+      }
+
+      .form-select {
+        width: calc(100%);
+        padding: 10px;
+        font-size: 16px;
+        border-radius: 0 5px 5px 0;
+        border: 1px solid #62636bc1;
+        background-color: #acbbe5a9;
+        color: #333;
+      }
+
+      .btn-container {
+        text-align: center;
+      }
+
+      .btn {
+        padding: 12px 30px;
+        background-color: #758ad0bf;
+        color: #000000;
+        border-radius: 8px;
+        border-color: rgba(145, 149, 153, 0.41);
+        cursor: pointer;
+        font-size: 20px;
+        text-transform: uppercase;
+        transition: background-color 0.3s ease;
+        width: 50%;
+        display: inline-block;
+      }
+
+      .btn:hover {
+        background-color: #5b6fb1d9;
+      }
+
+      .info {
+        margin-top: 20px;
+      }
+
+      .table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+      }
+
+      .table th,
+      .table td {
+        padding: 12px;
+        text-align: center;
+        border: 1px solid #070707;
+        color: #0d0c0c;
+      }
+
+      .table th {
+        background-color: #cbc7e1de;
+        color: #090909;
+      }
+
+      .table-striped tbody tr:nth-child(odd) {
+        background-color: #d6ddef6b;
+      }
+
+      .table-striped tbody tr:nth-child(even) {
+        background-color: #a3aae371;
+      }
+
+      .resulte {
+        width: 100%;
+        padding: 10px;
+        font-size: 20px;
+        border: 1px solid #868ec2;
+        border-radius: 5px;
+        resize: none;
+        margin-top: 10px;
+        background-color: #d1d8ea88;
+        color: #f3fafb;
+      }
+
+      .table td:nth-child(2) {
+       
+        color: #fff;
+        text-align: center;
+        padding: 8px;
+        border-radius: 5px;
+      }
+
+      a {
+        display: inline-block;
+        padding: 8px 20px;
+        background-color: #4d48e096;
+        color: #070707;
+        text-decoration: none;
+        border-radius: 5px;
+        text-align: center;
+        transition: background-color 0.3s ease;
+      }
+
+      a:hover {
+        background-color: #e2e7ed;
+      }
+
+      .form-group {
+        margin-bottom: 15px;
+      }
+
+      .form-group label {
+        font-size: 18px;
+        font-weight: bold;
+        color: #000000;
+        display: block;
+        margin-bottom: 8px;
+      }
+
+      
+
+      .about-modal {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80%;
+        max-width: 600px;
+        padding: 20px;
+        background-color: #618cf1;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        border-radius: 12px;
+        
+      }
+
+      
+      .about-box {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;/* مسافة داخلية */
+        background-color: #d0d4e6c9; /* لون خلفية المربع */
+        color: #fffbfb; /* لون النص */
+        border-radius: 12px; /* زوايا مستديرة */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* ظل للمربع */
+        text-align:center; /* محاذاة النص داخل المربع */
+        margin-bottom: 30px; /* مسافة من أسفل الصفحة */
+      }
+      .about-box h2,
+      .about-box h3 {
+        margin: 10px 0;
+      }
+
+      .about-box a {
+        color: #353539; /* لون الروابط */
+        text-decoration: none;
+      }
+
+      .about-box a:hover {
+        text-decoration: underline;
+      }
+
+      .about-box i {
+        display: block; /* كل عنصر في سطر جديد */
+        margin-top: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <button
+      class="about-btn"
+      onclick="document.getElementById('about-modal').style.display='block'"
+    >
+      
+    </button>
+
+    
+    </div>
+
+    <div class="container">
+      <h2>Information Retrieval HW</h2>
+      <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="form-group">
+          <label for="search-input">Enter Your Text</label>
+          <input
+            type="text"
+            id="search-input"
+            class="form-control"
+            name="search-input"
+            placeholder="Enter Your Text"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <div class="input-group">
+            <label class="input-group-text" for="inputGroupSelect01"
+              >Retrieval Model</label
+            >
+            <select
+              class="form-select"
+              id="inputGroupSelect01"
+              name="select-option"
+            >
+              <option selected>Choose...</option>
+              <option value="Boolean Model">Boolean Model</option>
+              <option value="Vector Model">Vector Model</option>
+              <option value="Extended Boolean">Extended Boolean</option>
+            </select>
+          </div>
+        </div>
+        <div class="btn-container">
+          <button type="submit" class="btn">Search</button>
+        </div>
+      </form>
+
+      <div class="info">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Search Result</th>
+              <th>Rank</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for result in search_results %}
+            <tr>
+              <td><a href="{% url 'read' result %}">{{ result }}</a></td>
+              <td>{{ forloop.counter }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+       
+      </div>
+    </div>
+ <!-- مربع المعلومات أسفل الصفحة -->
+ <div class="about-box">
+  <h2>SIR601 - Information Retrieval HW</h2>
+  <a href="mailto:t_balkhatib@svuonline.org">Dr. Bassel Alkhatib</a>
+  <h3>Participants:</h3>
+  <i>
+    <a href="mailto:loulouaa_130237@svuonline.org">loulouaa jabban</a> &emsp; loulouaa_130237
+  </i>
+  <i>
+    <a href="mailto:george_112766@svuonline.org">george faraj</a> &emsp;  george_112766  
+  </i>
+  <i>
+    <a href="mailto:MUTAZ_1171669@svuonline.org">Mutaz Alkurdi</a> &emsp; MUTAZ_117166
+  </i>
+  <i>
+    <a href="mailto:Osama_204263@svuonline.org">Osama Ahmed</a> &emsp; Osama_204263
+  </i>
+</div>
+    <script>
+      // Close the modal when clicking outside of it
+      window.onclick = function (event) {
+        var modal = document.getElementById("about-modal");
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      };
+     
+    </script>
+  </body>
+</html>
